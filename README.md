@@ -34,4 +34,4 @@ Paired with the lovely Zoe (@zoeabryant) today and we started to TDD our student
 
 Day 7 - tdd-student-directory-3.rb
 ---------------------
-Paired with Hannah (@HanWax) today to redo the student directory with TDD. We learned about loading and saving csv files and how to test for them.
+Paired with Hannah (@HanWax) today to redo the student directory with TDD. We learned more about loading and saving csv files and how to test for them.
