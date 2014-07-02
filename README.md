@@ -31,3 +31,7 @@ Threesome with Alex and Iona today to re-do the student directory project TDD'in
 Day 6 - tdd-student-directory-2.rb
 ---------------------
 Paired with the lovely Zoe (@zoeabryant) today and we started to TDD our student directory from scratch. She taught me many fun sublime shortcuts I didn't know about before. We worked out how to test inputing and printing multiple students, and have students saved in a .csv file. 
+
+Day 7 - tdd-student-directory-3.rb
+---------------------
+Paired with Hannah (@HanWax) today to redo the student directory with TDD. We learned about loading and saving csv files and how to test for them.
