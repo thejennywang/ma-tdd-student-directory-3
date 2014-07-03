@@ -82,12 +82,13 @@ def get_selection
 end
 
 def display_menu
-    puts "--------MAIN MENU---------"
+    puts "-----------MAIN MENU-----------"
     puts "1. Add students"
     puts "2. Show all the students"
     puts "3. Save students.csv file"
     puts "4. Load students into directory"
     puts "9. Exit"
-    puts "Please input your selection"
+    puts "-------------------------------"
+    print "Please input your selection: "
 end
  

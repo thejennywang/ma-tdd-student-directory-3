@@ -119,10 +119,12 @@ describe 'Student Directory' do
 			expect(display_list).to eq "Jenny, June\nHannah, June"
 		end
 	end
-
+		
 	context 'validates information inputted' do
 		it 'checks if string is empty' do
 			string = ""
 		end
 	end
 end
+
+

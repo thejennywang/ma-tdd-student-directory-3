@@ -35,3 +35,7 @@ Paired with the lovely Zoe (@zoeabryant) today and we started to TDD our student
 Day 7 - tdd-student-directory-3.rb
 ---------------------
 Paired with Hannah (@HanWax) today to redo the student directory with TDD. We learned more about loading and saving csv files and how to test for them.
+
+Day 8 - tdd-student-directory-3.rb
+---------------------
+Continued to work on the student directory I started with Hannah yesteryday pairing with Dave (@Bayonnaise) today. We continued to TDD the program to have an interactive menu and allows user to input students, save students, load students back into the program after the program is exited, and exit the program. Dave introduced some slightly more advanced programming logic to me which were quite cool to implement.
