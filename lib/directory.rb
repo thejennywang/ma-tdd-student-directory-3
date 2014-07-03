@@ -23,3 +23,48 @@ def students_to_csv(students)
     end
 	end
 end
+
+def display_student(student)
+	"#{student[:name]}, #{student[:cohort]}"
+end
+
+def display_list
+	students.map do |student| 
+		display_student(student)
+	end.join("\n")
+end
+
+def input_new_student
+	name = ask_for_student("a name")
+	cohort = ask_for_student("cohort")
+	student = {name: name, cohort: cohort}
+	save(student)
+end
+
+def ask_for_student(info)
+	puts "Please enter #{info}"
+	gets.chomp
+end
+
+def choose_action(selection)	
+	case selection
+	when "1"
+		input_new_student
+	when "2"
+		puts display_list
+	end
+end
+
+def get_selection
+	display_menu
+	selection = gets.chomp
+	choose_action(selection)
+end
+
+def display_menu
+    puts "--------MAIN MENU---------"
+    puts "1. Add students"
+    puts "2. Show all the students"
+    puts "9. EXIT the awesome program"
+    puts "Please input your selection"
+end
