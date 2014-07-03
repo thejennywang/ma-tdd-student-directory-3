@@ -24,6 +24,18 @@ def students_to_csv(students)
 	end
 end
 
+def load_students
+	CSV.foreach("./students.csv", "r") do |row|
+		students << {name: row[0], cohort: row[1]}
+	end
+end
+
+def load_students_test(filename)
+	CSV.foreach('./test.csv', 'r') do |row|
+		students << {name: row[0], cohort: row[1]}
+	end
+end
+
 def display_student(student)
 	"#{student[:name]}, #{student[:cohort]}"
 end
@@ -52,6 +64,12 @@ def choose_action(selection)
 		input_new_student
 	when "2"
 		puts display_list
+	when "3"
+		students_to_csv(students)
+	when "4"
+		load_students
+	when "9"
+		exit
 	end
 end
 
@@ -65,6 +83,8 @@ def display_menu
     puts "--------MAIN MENU---------"
     puts "1. Add students"
     puts "2. Show all the students"
-    puts "9. EXIT the awesome program"
+    puts "3. Save students.csv file"
+    puts "4. Load students into directory"
+    puts "9. Exit"
     puts "Please input your selection"
 end

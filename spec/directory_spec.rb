@@ -9,8 +9,8 @@ describe 'Student Directory' do
 		expect(students).to be_empty
 	end	
 
-	context 'has a menu' do
-		it 'displays' do
+	context 'menu' do
+		it 'displays menu' do
 			selection = "1"
 			expect(self).to receive(:display_menu)
 			expect(self).to receive(:gets).and_return(selection)
@@ -18,15 +18,30 @@ describe 'Student Directory' do
 			get_selection 
 		end
 
-		context 'processes different procedures for each choice of action' do
-			it '1' do
+		context 'processes different of actions' do
+			it '1 allows user to input students' do
 				expect(self).to receive(:input_new_student)
 				choose_action("1")
 			end
 
-			it '2' do
+			it '2 shows the list of students' do
 				expect(self).to receive(:puts).with(display_list)
 				choose_action("2")
+			end
+
+			it '3 saves students to a csv file' do
+				expect(self).to receive(:students_to_csv).with(students)
+				choose_action("3")
+			end
+
+			it '4 loads list of students into the program' do
+				expect(self).to receive(:load_students)
+				choose_action("4")
+			end
+
+			it '9 exits the program' do
+				expect(self).to receive(:exit)
+				choose_action("9")
 			end
 		end
 	end
@@ -75,14 +90,25 @@ describe 'Student Directory' do
 			students = [student]
 			csv = double
 			expect(csv).to receive(:<<).with(students_list(student))
-			# expect(csv).to receive(:<<).with(students[1])
 			expect(CSV).to receive(:open).with('./students.csv', 'wb').and_yield(csv)
 
       students_to_csv(students)
 		end
+
+		it 'loads students from csv to program' do
+			row = "Jenny, June"
+			expect(students).to receive(:<<).with({name: row[0], cohort: row[1]})
+			expect(CSV).to receive(:foreach).with('./students.csv', 'r').and_yield(row)
+			load_students
+		end
+
+		it 'load from a real file' do
+      load_students_test('./test.csv')
+      # expect(students).to eq [{},{}]
+		end
 	end
 
-	context 'displays studentswith their information' do
+	context 'displays students with their information' do
 		it 'for one student' do
 			expect(display_student(student)).to eq "Jenny, June"
 		end
