@@ -20,7 +20,7 @@ def students_to_csv(students)
 	CSV.open("./students.csv", "wb") do |csv|
 		students.each do |student|
       csv << students_list(student)
-    end
+    end 
 	end
 end
 
@@ -55,7 +55,9 @@ end
 
 def ask_for_student(info)
 	puts "Please enter #{info}"
-	gets.chomp
+	input = gets.chomp
+	ask_for_student(info) if input.empty?
+	return input	
 end
 
 def choose_action(selection)	
@@ -88,3 +90,4 @@ def display_menu
     puts "9. Exit"
     puts "Please input your selection"
 end
+ 
